@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    
+    <title>La Cible Valognaise | Association de Tir Sportif</title>
+    <meta name="description" content="La Cible Valognaise, association de tir sportif créée en 1947. Affiliée à la F.F.Tir. Découvrez nos installations, notre école de tir et rejoignez-nous.">
+    <meta name="keywords" content="tir sportif, La Cible Valognaise, Valognes, stand de tir, FFTir, association sportive, pistolet, carabine">
+    
+    <style>
+        /* --- VARIABLES DE COULEURS (Inspirées du logo) --- */
+        :root {
+            --noir-cible: #0a0a0a;
+            --gris-anthracite: #2a2a2a;
+            --bleu-cible: #2c3882; /* Bleu du faisceau */
+            --rouge-cible: #e01920; /* Rouge du faisceau */
+            --bois-arme: #f2a679; /* Orange clair des armes */
+            --blanc-creme: #fcfcfc;
+            --texte-sombre: #1a1a1a;
+            --gris-doux: #666666;
+            --gris-clair: #e8e8e8;
+        }
+
+        /* --- STYLES DE BASE --- */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--blanc-creme);
+            color: var(--texte-sombre);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* --- EN-TÊTE (HEADER) --- */
+        header {
+            background-color: var(--noir-cible);
+            padding: 10px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 4px solid var(--bleu-cible);
+        }
+
+        .logo-link {
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .logo-img {
+            max-height: 110px;
+            width: auto;
+            vertical-align: middle;
+            transition: transform 0.3s ease;
+            background-color: white;
+            border-radius: 50%;
+            padding: 5px;
+        }
+
+        .logo-img:hover {
+            transform: scale(1.05);
+        }
+
+        /* --- MENU DE NAVIGATION --- */
+        nav {
+            background-color: var(--gris-clair);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap; 
+            gap: 20px;
+            padding: 12px 20px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        nav a {
+            color: var(--noir-cible);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 15px;
+            text-transform: uppercase;
+            transition: color 0.2s;
+            white-space: nowrap; 
+        }
+
+        nav a:hover {
+            color: var(--rouge-cible);
+        }
+
+        /* --- SECTION HERO --- */
+        .hero {
+            /* Mettre ici une photo d'un pas de tir ou de cibles en fond */
+            background: linear-gradient(rgba(10, 10, 10, 0.7), rgba(10, 10, 10, 0.8)), url('fond-stand-tir.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 50px 20px 80px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .hero h1 {
+            font-size: 38px;
+            margin-bottom: 5px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+        }
+        
+        .hero h2 {
+            font-size: 22px;
+            color: var(--bois-arme);
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 30px; 
+            max-width: 600px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+        }
+
+        .info-flash {
+            margin-bottom: 25px; 
+            background-color: rgba(44, 56, 130, 0.8); /* Bleu translucide */
+            border: 1px solid var(--bleu-cible);
+            backdrop-filter: blur(5px);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 30px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 15px;
+            font-weight: 500;
+            max-width: 90%;
+        }
+
+        .pulse-dot {
+            width: 10px;
+            height: 10px;
+            background-color: var(--rouge-cible);
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 0 0 rgba(224, 25, 32, 0.7);
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(224, 25, 32, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(224, 25, 32, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(224, 25, 32, 0); }
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--rouge-cible);
+            color: white;
+            padding: 14px 28px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 16px;
+            text-transform: uppercase;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            transition: background-color 0.2s, transform 0.2s;
+            margin-bottom: 15px; 
+        }
+
+        .btn:hover {
+            background-color: #bd141a;
+            transform: translateY(-2px);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid white;
+            margin-left: 10px;
+        }
+        
+        .btn-outline:hover {
+            background-color: white;
+            color: var(--noir-cible);
+        }
+
+        /* --- SECTIONS ET CORRECTION DU SCROLL --- */
+        .section-padding {
+            padding: 60px 20px;
+        }
+
+        #installations, #contact {
+            scroll-margin-top: 150px;
+        }
+
+        .section-titre {
+            text-align: center;
+            font-size: 32px;
+            color: var(--noir-cible);
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            font-weight: 800;
+        }
+        
+        .section-titre span {
+            color: var(--bleu-cible);
+        }
+
+        /* --- ANIMATION REVEAL ON SCROLL --- */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.6s ease-out;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* --- GRILLE CARTES --- */
+        .grid-cartes {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .lien-carte {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .carte-info {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            border-top: 5px solid var(--bleu-cible);
+            text-align: center;
+            overflow: hidden;
+            transition: transform 0.2s, box-shadow 0.2s;
+            height: 100%;
+        }
+        
+        .carte-info:nth-child(even) .carte-info {
+            border-top: 5px solid var(--rouge-cible);
+        }
+
+        .carte-info:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .carte-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background-color: var(--gris-clair);
+        }
+
+        .carte-texte {
+            padding: 25px 20px;
+        }
+        
+        .carte-texte h3 {
+            color: var(--noir-cible);
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+
+        /* --- CONTACT --- */
+        .contact-container {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .contact-card {
+            background-color: white;
+            padding: 35px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            border-left: 6px solid var(--rouge-cible);
+            flex: 1;
+        }
+
+        .contact-card h4 {
+            color: var(--noir-cible);
+            font-size: 22px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid var(--gris-clair);
+            padding-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .horaires-liste {
+            list-style: none;
+            margin-top: 20px;
+        }
+
+        .horaires-liste li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center; 
+            padding: 12px 0;
+            border-bottom: 1px solid #f0f0f0;
+            font-size: 15px;
+        }
+
+        /* --- BOUTONS DE CONTACT --- */
+        .btn-contact {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--gris-anthracite);
+            color: white !important;
+            padding: 12px 20px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 15px;
+            width: 100%;
+            transition: background-color 0.2s;
+        }
+
+        .btn-contact:hover {
+            background-color: var(--bleu-cible);
+        }
+
+        .icon-inline {
+            width: 20px;
+            height: 20px;
+            vertical-align: middle;
+            margin-right: 10px;
+            color: var(--bois-arme);
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: var(--noir-cible);
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            font-size: 14px;
+            border-top: 4px solid var(--rouge-cible);
+        }
+
+        /* --- DESKTOP MEDIA QUERIES --- */
+        @media (min-width: 768px) {
+            nav { gap: 40px; }
+            .hero { padding: 80px 40px 120px; }
+            .hero h1 { font-size: 52px; }
+            .grid-cartes { flex-direction: row; flex-wrap: wrap; justify-content: center; }
+            .lien-carte { width: calc(50% - 20px); }
+            .contact-container { flex-direction: row; align-items: stretch; }
+        }
+        @media (min-width: 1024px) {
+            .lien-carte { width: calc(33.333% - 20px); }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo-link">
+            <img src="logo-cible-valognaise.jpg" alt="Logo La Cible Valognaise F.F. TIR" class="logo-img">
+        </a>
+    </header>
+
+    <nav>
+        <a href="#accueil">Accueil</a>
+        <a href="#club">Le Club</a>
+        <a href="#installations">Nos Installations</a>
+        <a href="#tarifs">Tarifs & Inscriptions</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <section class="hero" id="accueil">
+        <h1>La Cible Valognaise</h1>
+        <h2>Association de Tir Sportif – Créée en 1947</h2>
+        <p>Rejoignez notre club historique affilié à la Fédération Française de Tir. Débutants ou compétiteurs, venez pratiquer le tir sportif dans un cadre sécurisé et convivial.</p>
+        
+        <div id="bandeau-flash" class="info-flash">
+            <span class="pulse-dot"></span>
+            <span id="texte-flash-content">Les inscriptions pour la saison 2026-2027 sont ouvertes !</span>
+        </div>
+
+        <div>
+            <a href="#contact" class="btn">Nous contacter</a>
+            <a href="#installations" class="btn btn-outline">Découvrir le stand</a>
+        </div>
+    </section>
+
+    <section class="section-padding" id="installations" style="background-color: #f9f9f9;">
+        <h2 class="section-titre">Nos <span>Installations</span></h2>
+        <div class="grid-cartes">
+            
+            <a href="pas-de-tir-10m.html" class="lien-carte">
+                <div class="carte-info reveal">
+                    <img src="img-10m.jpg" alt="Pas de tir 10 mètres air comprimé" class="carte-img">
+                    <div class="carte-texte">
+                        <h3>Stand 10 Mètres</h3>
+                        <p>Dédié aux armes à air comprimé (pistolet et carabine). Idéal pour l'école de tir et l'apprentissage des fondamentaux.</p>
+                    </div>
+                </div>
+            </a>
+            
+            <a href="pas-de-tir-25m.html" class="lien-carte">
+                <div class="carte-info reveal">
+                    <img src="img-25m.jpg" alt="Pas de tir 25 mètres" class="carte-img">
+                    <div class="carte-texte">
+                        <h3>Stand 25 Mètres</h3>
+                        <p>Pas de tir adapté pour le tir au pistolet et revolver (calibres standards). Ciblerie pivotante pour les épreuves de vitesse.</p>
+                    </div>
+                </div>
+            </a>
+            
+            <a href="pas-de-tir-50m.html" class="lien-carte">
+                <div class="carte-info reveal">
+                    <img src="img-50m.jpg" alt="Pas de tir 50 mètres carabine" class="carte-img">
+                    <div class="carte-texte">
+                        <h3>Stand 50 Mètres</h3>
+                        <p>Réservé principalement à la carabine 22LR et pistolet libre. Équipé pour les tireurs loisirs et les compétiteurs de précision.</p>
+                    </div>
+                </div>
+            </a>
+
+        </div>
+    </section>
+
+    <section class="section-padding" id="contact" style="background-color: white;">
+        <h2 class="section-titre">Infos <span>Pratiques</span></h2>
+        
+        <div class="contact-container">
+            
+            <div class="contact-card reveal">
+                <h4>Coordonnées & Accès</h4>
+                
+                <p style="font-size: 15px; margin-bottom: 20px; color: var(--gris-doux);">
+                    <strong>La Cible Valognaise</strong><br>
+                    [Adresse du stand de tir à Valognes]<br>
+                    50700 Valognes
+                </p>
+                
+                <a href="tel:0772266599" class="btn-contact">
+                    <svg class="icon-inline" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg> 
+                    07 72 26 65 99
+                </a>
+                
+                <a href="mailto:la-cible@orange.fr" class="btn-contact">
+                    <svg class="icon-inline" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg> 
+                    la-cible@orange.fr
+                </a>
+            </div>
+            
+            <div class="contact-card reveal">
+                <h4>Horaires d'Ouverture</h4>
+                <p style="font-size: 14px; color: var(--gris-doux);">
+                    Les permanences sont assurées par nos bénévoles aux horaires suivants :
+                </p>
+
+                <ul class="horaires-liste">
+                    <li>
+                        <strong>Mercredi</strong>
+                        <span>14h00 – 17h00</span>
+                    </li>
+                    <li>
+                        <strong>Samedi</strong>
+                        <span>14h00 – 17h30</span>
+                    </li>
+                    <li>
+                        <strong>Dimanche</strong>
+                        <span>09h30 – 12h00</span>
+                    </li>
+                </ul>
+                <div style="margin-top: 20px; padding: 15px; background-color: #f0f4f8; border-left: 4px solid var(--bleu-cible); font-size: 13px; border-radius: 4px;">
+                    <strong>École de tir :</strong> Cours encadrés pour les jeunes le mercredi après-midi (hors vacances scolaires).
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 La Cible Valognaise - Association de Tir Sportif. Tous droits réservés.</p>
+        <p style="margin-top: 10px;">
+            Création web : <a href="https://cotentinwebstudio.fr/index.html" target="_blank" style="color: var(--bois-arme); text-decoration: none; font-weight: bold;">Cotentin Web Studio</a>
+        </p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Script pour l'animation au défilement (Conservé et optimisé)
+            const reveals = document.querySelectorAll('.reveal');
+            
+            const revealOptions = {
+                threshold: 0.1,
+                rootMargin: "0px 0px -50px 0px"
+            };
+
+            const revealOnScroll = new IntersectionObserver(function(entries, observer) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        observer.unobserve(entry.target); 
+                    }
+                });
+            }, revealOptions);
+
+            reveals.forEach(reveal => {
+                revealOnScroll.observe(reveal);
+            });
+        });
+    </script>
+</body>
+</html>
